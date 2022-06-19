@@ -18,9 +18,13 @@ public abstract class Animal {
     }
 
 
-    abstract void torun();
+    public void torun() {
 
-    abstract void toswim();
+    }
+
+    public void toswim() {
+
+    }
 
     public String getName() {
         return name;

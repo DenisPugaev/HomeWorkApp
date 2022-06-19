@@ -11,6 +11,8 @@ lesson 6
 4. * Добавить подсчет созданных котов, собак и животных.
  */
 
+import java.lang.reflect.Array;
+
 public class TrainingArea {
     public static void main(String[] args) {
         int numberOfStages = 3; // количество раундов соревнования в беге и заплыве
@@ -19,36 +21,47 @@ public class TrainingArea {
         int initialDistanceSwim = 5;// начальная дистанция заплыва
         int distanceStepSwim = 3;// шаг заплыва который увеличивется с каждым новым раундом
 
-        Dog dog1 = new Dog("Шарик", 0, 0);
-        Dog dog2 = new Dog("Рекс", 0, 0);
-        Cat cat1 = new Cat("Мартин", 0, 0);
+        Dog[] dog = new Dog[2];
+        dog[0] = new Dog("Шарик", 0, 0);
+        dog[1] = new Dog("Рекс", 0, 0);
+
+        Cat[] cat = new Cat[2];
+        cat[0] = new Cat("Мартин", 0, 0);
+        cat[1] = new Cat("Cэм", 0, 0);
 
         System.out.println("Добро пожаловать на тренировочную площадку! " + "Всего участинков: " + (Dog.countDog + Cat.countCats) + " |" + " Котов - " + Cat.countCats + " |" + " Собак - " + Dog.countDog);
         System.out.println("--------------------");
         System.out.println("Начинаем забег! СТАРТ!");
         for (int i = 0; i < numberOfStages; i++) {
-            dog1.setRun(initialDistanceRun);
-            dog2.setRun(initialDistanceRun);
-            cat1.setRun(initialDistanceRun);
+            dog[0].setRun(initialDistanceRun);
+            dog[1].setRun(initialDistanceRun);
+            cat[0].setRun(initialDistanceRun);
+            cat[1].setRun(initialDistanceRun);
+            cat[0].setRun(initialDistanceRun);
 
-            dog1.torun();
-            dog2.torun();
-            cat1.torun();
+            dog[0].torun();
+            dog[1].torun();
+            cat[0].torun();
+            cat[1].torun();
 
             initialDistanceRun = initialDistanceRun + distanceStepRun;
+            System.out.println();
         }
         System.out.println("--------------------");
         System.out.println("Начинаем заплыв! СТАРТ!");
         for (int i = 0; i < numberOfStages; i++) {
-            dog1.setSwim(initialDistanceSwim);
-            dog2.setSwim(initialDistanceSwim);
-            cat1.setSwim(initialDistanceSwim);
+            dog[0].setSwim(initialDistanceSwim);
+            dog[1].setSwim(initialDistanceSwim);
+            cat[0].setSwim(initialDistanceSwim);
+            cat[1].setSwim(initialDistanceSwim);
 
-            dog1.toswim();
-            dog2.toswim();
-            cat1.toswim();
+            dog[0].toswim();
+            dog[1].toswim();
+            cat[0].toswim();
+            cat[1].toswim();
 
             initialDistanceSwim = initialDistanceSwim + distanceStepSwim;
+            System.out.println();
         }
     }
 }
